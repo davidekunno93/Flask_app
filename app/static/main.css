@@ -87,3 +87,16 @@ h3 {
     width: 200px;
     text-align: center;
 }
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.75;
+    transition-duration: 0.4s;
+}
+
+button:active {
+    opacity: 0.5;
+}

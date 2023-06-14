@@ -1,8 +1,6 @@
 from flask import Flask
 from flask import render_template
-# from app import app
-
-app = Flask(__name__)
+from app import app
 
 @app.route('/')
 def index():
@@ -10,14 +8,14 @@ def index():
     authors = "Flask"
     return render_template("index.html", logs=fake_logins, author=authors)
 
-@app.route('/about')
-def about():
-    me = "David Ekunno"
-    return render_template("about-us.html", name=me)
+@app.route('/fav')
+def fav():
+    favorites = [{"actor": "Ryan Reynolds", "athlete": "Tom Brady", "artist": "Ariana Grande", "tv_person": "Joey", "movie": "Legally Blonde"}, {"actor": "Jason Bateman", "athlete": "Kevin De Bruyne", "artist": "Drake", "tv_person": "David Mitchell", "movie": "Bourne Ultimatum"}]
+    return render_template("fav_5.html", fav=favorites)
 
-@app.route('/games')
-def games():
-    return 'The Games page'
+# @app.route('/games')
+# def games():
+#     return 'The Games page'
 
 # if __name__ == '__main__':
 #     app.run()

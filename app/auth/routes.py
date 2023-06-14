@@ -5,7 +5,7 @@ from ..models import User
 auth = Blueprint('auth', __name__, template_folder="auth_templates")
 
 @auth.route("/register", methods=["GET", "POST"])
-def  register():
+def register():
     form = RegisterForm()
     #request.method shows if the request made was GET or POST (or other?)
     if request.method == "POST":
